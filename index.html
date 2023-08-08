@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .neon-text {
+    font-family: 'Arial', sans-serif;
+    font-size: 3em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    position: relative;
+    animation: glow 1s ease-in-out infinite alternate;
+  }
+
+  .neon-text::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #00ff00;
+    animation: glow 1s ease-in-out infinite alternate-reverse;
+  }
+
+  @keyframes glow {
+    0% {
+      text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+    }
+    100% {
+      text-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 60px #00ff00;
+    }
+  }
+</style>
+<title>Neon Design</title>
+</head>
+<body>
+  <h1 class="neon-text" data-text="Esak Tech">Esak Tech</h1>
+</body>
+</html>
